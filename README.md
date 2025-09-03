@@ -28,57 +28,50 @@ Finance Tracker adalah aplikasi web modern untuk mengelola keuangan pribadi deng
 ## 📦 Instalasi
 
 1. Clone repository ini:
-```bash
-git clone https://github.com/username/finance-tracker.git
-cd finance-tracker
+   ```bash
+   git clone https://github.com/username/finance-tracker.git
+   cd finance-tracker
+   ```
 
 2. Install dependencies:
-```bash
-npm install
+   ```bash
+   npm install
+   ```
 
 3. Jalankan aplikasi:
-```bash
-npm start
+   ```bash
+   npm start
+   ```
 
-4. Buka browser dan akses http://localhost:3000
+4. Buka browser dan akses `http://localhost:3000`
 
 ## 🎯 Cara Penggunaan
-Menambah Transaksi
-Buka tab "Tambah"
 
-Pilih jenis transaksi (Pemasukan/Pengeluaran)
+### Menambah Transaksi
+1. Buka tab **"Tambah"**
+2. Pilih jenis transaksi (Pemasukan/Pengeluaran)
+3. Pilih kategori
+4. Masukkan deskripsi transaksi
+5. Masukkan jumlah nominal
+6. Klik **"Tambah Transaksi"**
 
-Pilih kategori
+### Melihat Ringkasan Keuangan
+Buka tab **"Dashboard"** untuk melihat:
+- Saldo terkini
+- Total pemasukan
+- Total pengeluaran
+- Grafik pengeluaran per kategori
+- Transaksi terbaru
 
-Masukkan deskripsi transaksi
-
-Masukkan jumlah nominal
-
-Klik "Tambah Transaksi"
-
-Melihat Ringkasan Keuangan
-Buka tab "Dashboard" untuk melihat:
-
-Saldo terkini
-
-Total pemasukan
-
-Total pengeluaran
-
-Grafik pengeluaran per kategori
-
-Transaksi terbaru
-
-Mengelola Transaksi
-Buka tab "Transaksi" untuk:
-
-Melihat semua transaksi
-
-Menghapus transaksi
-
-Memfilter berdasarkan jenis transaksi
+### Mengelola Transaksi
+Buka tab **"Transaksi"** untuk:
+- Melihat semua transaksi
+- Menghapus transaksi
+- Memfilter berdasarkan jenis transaksi
 
 ## 🏗️ Struktur Project
+
+```
 src/
 ├── components/
 │   ├── Dashboard.js          # Komponen dashboard
@@ -87,72 +80,88 @@ src/
 │   ├── TransactionForm.js    # Form tambah transaksi
 │   └── TransactionList.js    # Daftar transaksi
 ├── utils/
-│   └── storage.js           # Fungsi penyimpanan lokal
+│   └── storage.js            # Fungsi penyimpanan lokal
 ├── styles/
-│   └── App.css              # Styling aplikasi
-└── App.js                   # Komponen utama
+│   └── App.css               # Styling aplikasi
+└── App.js                    # Komponen utama
+```
 
-🔧 Konfigurasi
-Aplikasi ini menggunakan localStorage untuk menyimpan data. Data akan tetap tersimpan meskipun browser ditutup.
+## 🔧 Konfigurasi
+Aplikasi ini menggunakan **localStorage** untuk menyimpan data. Data akan tetap tersimpan meskipun browser ditutup.
 
-🌐 Deployment
+## 🌐 Deployment
 Aplikasi dapat di-deploy ke berbagai platform:
 
-Vercel
-Install Vercel CLI: npm i -g vercel
+### Vercel
+1. Install Vercel CLI:
+   ```bash
+   npm i -g vercel
+   ```
+2. Jalankan:
+   ```bash
+   vercel
+   ```
+3. Ikuti prompt yang muncul
 
-Jalankan: vercel
+### Netlify
+1. Build project:
+   ```bash
+   npm run build
+   ```
+2. Drag folder `build` ke **Netlify Drop**
 
-Follow prompt yang muncul
+### GitHub Pages
+1. Install gh-pages:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+2. Tambah di `package.json`:
+   ```json
+   "homepage": "https://username.github.io/finance-tracker",
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+3. Deploy:
+   ```bash
+   npm run deploy
+   ```
 
-Netlify
-Build project: npm run build
+## 🤝 Berkontribusi
 
-Drag folder build ke Netlify Drop
-
-GitHub Pages
-Install gh-pages: npm install --save-dev gh-pages
-
-Tambah di package.json:
-
-json
-"homepage": "https://username.github.io/finance-tracker",
-"scripts": {
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-}
-Deploy: npm run deploy
-
-🤝 Berkontribusi
 Kontribusi selalu diterima! Silakan lakukan:
+1. Fork project ini
+2. Buat branch fitur baru:
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit perubahan:
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. Push ke branch:
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. Buat Pull Request
 
-Fork project ini
+## 📄 Lisensi
 
-Buat branch fitur baru (git checkout -b feature/AmazingFeature)
+Distributed under the MIT License. Lihat file [LICENSE](LICENSE) untuk lebih detail.
 
-Commit perubahan (git commit -m 'Add some AmazingFeature')
+## 👥 Kontak
 
-Push ke branch (git push origin feature/AmazingFeature)
+Nama Anda - [@twitter_anda](https://twitter.com/twitter_anda) - email@example.com
 
-Buat Pull Request
+Link Project: [https://github.com/username/finance-tracker](https://github.com/username/finance-tracker)
 
-📄 Lisensi
-Distributed under the MIT License. Lihat LICENSE untuk lebih detail.
+## 🙌 Penghargaan
 
-👥 Kontak
-Nama Anda - @twitter_anda - email@example.com
+- [React](https://react.dev/)
+- [Recharts](https://recharts.org/)
+- [Lucide](https://lucide.dev/)
 
-Link Project: https://github.com/username/finance-tracker
+---
 
-🙌 Penghargaan
-React
-
-Recharts
-
-Lucide
-
-⭐️ Jika project ini membantu Anda, jangan lupa beri bintang di GitHub!
-
-text
-
-Simpan konten di atas dalam file dengan nama `README.md` di root folder project Anda. File README.md ini memberikan informasi lengkap tentang project finance tracker Anda, termasuk fitur, cara instalasi, cara penggunaan, dan informasi lainnya yang berguna untuk orang yang ingin memahami atau berkontribusi pada project Anda.
+⭐️ Jika project ini membantu Anda, jangan lupa beri **bintang** di GitHub!
