@@ -10,17 +10,34 @@ import './styles/App.css';
 function App() {
   const [transactions, setTransactions] = useState([]);
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const storedTransactions = getTransactions();
-    setTransactions(storedTransactions);
+    const loadTransactions = () => {
+      try {
+        const storedTransactions = getTransactions();
+        console.log('Loaded transactions:', storedTransactions);
+        setTransactions(storedTransactions);
+      } catch (error) {
+        console.error('Failed to load transactions:', error);
+        setTransactions([]);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    loadTransactions();
   }, []);
 
   useEffect(() => {
-    saveTransactions(transactions);
-  }, [transactions]);
+    if (!isLoading) {
+      console.log('Saving transactions:', transactions);
+      saveTransactions(transactions);
+    }
+  }, [transactions, isLoading]);
 
   const addTransaction = (transaction) => {
+    console.log('Adding transaction:', transaction);
     const newTransaction = {
       ...transaction,
       id: Date.now(),
@@ -32,6 +49,14 @@ function App() {
   const deleteTransaction = (id) => {
     setTransactions(transactions.filter(transaction => transaction.id !== id));
   };
+
+  if (isLoading) {
+    return (
+      <div className="app">
+        <div className="loading">Memuat data...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="app">

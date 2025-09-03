@@ -1,5 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
+import { formatRupiah } from '../utils/formatter';
 
 const ExpenseChart = ({ transactions }) => {
   const expensesByCategory = transactions
@@ -19,6 +20,18 @@ const ExpenseChart = ({ transactions }) => {
   }));
 
   const COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff8042', '#0088FE', '#00C49F'];
+
+  // Custom tooltip formatter
+  const customTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p>{`${payload[0].name} : Rp${formatRupiah(payload[0].value)}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
 
   if (chartData.length === 0) {
     return (
@@ -47,7 +60,7 @@ const ExpenseChart = ({ transactions }) => {
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>
-          <Tooltip formatter={(value) => [`Rp${value.toLocaleString()}`, 'Jumlah']} />
+          <Tooltip content={customTooltip} />
           <Legend />
         </PieChart>
       </ResponsiveContainer>

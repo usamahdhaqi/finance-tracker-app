@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Trash2 } from 'lucide-react';
+import { formatRupiah } from '../utils/formatter';
 
 const TransactionList = ({ transactions, onDelete }) => {
   const [filter, setFilter] = useState('all');
@@ -40,7 +41,7 @@ const TransactionList = ({ transactions, onDelete }) => {
               <div className="transaction-actions">
                 <span className={`amount ${transaction.type}`}>
                   {transaction.type === 'expense' ? '-' : '+'} 
-                  Rp{transaction.amount.toLocaleString()}
+                  Rp{formatRupiah(transaction.amount)}
                 </span>
                 <button 
                   onClick={() => onDelete(transaction.id)}

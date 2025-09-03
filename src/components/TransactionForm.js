@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { formatRupiah, parseRupiah, handleAmountChange } from '../utils/formatter';
 
 const TransactionForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const TransactionForm = ({ onSubmit }) => {
     category: 'makanan'
   });
 
+  const [rawAmount, setRawAmount] = useState(''); // Menyimpan nilai numerik asli
+
   const categories = {
     expense: ['makanan', 'transportasi', 'belanja', 'hiburan', 'kesehatan', 'lainnya'],
     income: ['gaji', 'freelance', 'investasi', 'hadiah', 'lainnya']
@@ -15,18 +18,30 @@ const TransactionForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.description || !formData.amount) return;
+    if (!formData.description || !rawAmount) return;
 
     onSubmit({
       ...formData,
-      amount: parseFloat(formData.amount)
+      amount: parseInt(rawAmount.replace(/\D/g, '')) || 0 // Simpan sebagai number
     });
 
+    // Reset form
     setFormData({
       description: '',
       amount: '',
       type: 'expense',
       category: 'makanan'
+    });
+    setRawAmount('');
+  };
+
+  const handleAmountInputChange = (e) => {
+    const value = e.target.value;
+    setRawAmount(value); // Simpan nilai asli
+    
+    // Format untuk tampilan
+    handleAmountChange(value, (formattedValue) => {
+      setFormData(prev => ({...prev, amount: formattedValue}));
     });
   };
 
@@ -82,12 +97,10 @@ const TransactionForm = ({ onSubmit }) => {
         <div className="form-group">
           <label>Jumlah (Rp)</label>
           <input
-            type="number"
+            type="text"
             placeholder="0"
-            value={formData.amount}
-            onChange={(e) => setFormData({...formData, amount: e.target.value})}
-            min="0"
-            step="100"
+            value={formData.amount} // Tampilkan nilai yang diformat
+            onChange={handleAmountInputChange}
             required
           />
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatRupiah } from '../utils/formatter';
 
 const Dashboard = ({ transactions }) => {
   const recentTransactions = transactions.slice(-5).reverse();
@@ -16,7 +17,7 @@ const Dashboard = ({ transactions }) => {
               </div>
               <span className={`amount ${transaction.type}`}>
                 {transaction.type === 'expense' ? '-' : '+'} 
-                Rp{transaction.amount.toLocaleString()}
+                Rp{formatRupiah(transaction.amount)}
               </span>
             </div>
           ))
