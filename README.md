@@ -29,7 +29,7 @@ Finance Tracker adalah aplikasi web modern untuk mengelola keuangan pribadi deng
 
 1. Clone repository ini:
    ```bash
-   git clone https://github.com/username/finance-tracker.git
+   git clone https://github.com/usamahdhaqi/finance-tracker-app.git
    cd finance-tracker
    ```
 
@@ -152,9 +152,9 @@ Distributed under the MIT License. Lihat file [LICENSE](LICENSE) untuk lebih det
 
 ## 👥 Kontak
 
-Nama Anda - [@twitter_anda](https://twitter.com/twitter_anda) - email@example.com
+Nama Anda - [@usmhdhylhq](https://instagram.com/usmhdhylhq) - usamahdhaqi@gmail.com
 
-Link Project: [https://github.com/username/finance-tracker](https://github.com/username/finance-tracker)
+Link Project: [https://github.com/usamahdhaqi/finance-tracker-app](https://github.com/usamahdhaqi/finance-tracker-app)
 
 ## 🙌 Penghargaan
 
