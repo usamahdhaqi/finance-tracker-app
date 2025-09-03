@@ -1,70 +1,158 @@
-# Getting Started with Create React App
+# Finance Tracker - Aplikasi Pencatatan Keuangan Pribadi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Finance Tracker adalah aplikasi web modern untuk mengelola keuangan pribadi dengan antarmuka yang minimalis dan intuitif. Aplikasi ini membantu Anda melacak pemasukan dan pengeluaran dengan visualisasi data yang informatif.
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-18.2.0-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
-In the project directory, you can run:
+## ✨ Fitur
 
-### `npm start`
+- 📊 **Dashboard Keuangan** - Ringkasan saldo, pemasukan, dan pengeluaran
+- 💰 **Pencatatan Transaksi** - Tambah transaksi pemasukan dan pengeluaran
+- 🗂️ **Kategori Transaksi** - Organisir transaksi berdasarkan kategori
+- 📈 **Grafik Interaktif** - Visualisasi pengeluaran dengan pie chart
+- 🔍 **Filter Transaksi** - Filter berdasarkan jenis transaksi
+- 💾 **Penyimpanan Lokal** - Data tersimpan di browser Anda
+- 📱 **Responsif** - Bekerja optimal di desktop dan mobile
+- 🎨 **Desain Minimalis** - Antarmuka yang bersih dan modern
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 Teknologi
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React** - Framework UI
+- **Recharts** - Library untuk chart dan grafik
+- **Lucide React** - Icon library
+- **CSS3** - Styling dengan gradient dan modern layout
+- **Local Storage** - Penyimpanan data di browser
 
-### `npm test`
+## 📦 Instalasi
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone repository ini:
+```bash
+git clone https://github.com/username/finance-tracker.git
+cd finance-tracker
 
-### `npm run build`
+2. Install dependencies:
+```bash
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Jalankan aplikasi:
+```bash
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Buka browser dan akses http://localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎯 Cara Penggunaan
+Menambah Transaksi
+Buka tab "Tambah"
 
-### `npm run eject`
+Pilih jenis transaksi (Pemasukan/Pengeluaran)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pilih kategori
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Masukkan deskripsi transaksi
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Masukkan jumlah nominal
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Klik "Tambah Transaksi"
 
-## Learn More
+Melihat Ringkasan Keuangan
+Buka tab "Dashboard" untuk melihat:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Saldo terkini
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Total pemasukan
 
-### Code Splitting
+Total pengeluaran
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Grafik pengeluaran per kategori
 
-### Analyzing the Bundle Size
+Transaksi terbaru
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Mengelola Transaksi
+Buka tab "Transaksi" untuk:
 
-### Making a Progressive Web App
+Melihat semua transaksi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Menghapus transaksi
 
-### Advanced Configuration
+Memfilter berdasarkan jenis transaksi
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🏗️ Struktur Project
+src/
+├── components/
+│   ├── Dashboard.js          # Komponen dashboard
+│   ├── ExpenseChart.js       # Komponen chart pengeluaran
+│   ├── FinancialSummary.js   # Ringkasan keuangan
+│   ├── TransactionForm.js    # Form tambah transaksi
+│   └── TransactionList.js    # Daftar transaksi
+├── utils/
+│   └── storage.js           # Fungsi penyimpanan lokal
+├── styles/
+│   └── App.css              # Styling aplikasi
+└── App.js                   # Komponen utama
 
-### Deployment
+🔧 Konfigurasi
+Aplikasi ini menggunakan localStorage untuk menyimpan data. Data akan tetap tersimpan meskipun browser ditutup.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🌐 Deployment
+Aplikasi dapat di-deploy ke berbagai platform:
 
-### `npm run build` fails to minify
+Vercel
+Install Vercel CLI: npm i -g vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Jalankan: vercel
+
+Follow prompt yang muncul
+
+Netlify
+Build project: npm run build
+
+Drag folder build ke Netlify Drop
+
+GitHub Pages
+Install gh-pages: npm install --save-dev gh-pages
+
+Tambah di package.json:
+
+json
+"homepage": "https://username.github.io/finance-tracker",
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
+Deploy: npm run deploy
+
+🤝 Berkontribusi
+Kontribusi selalu diterima! Silakan lakukan:
+
+Fork project ini
+
+Buat branch fitur baru (git checkout -b feature/AmazingFeature)
+
+Commit perubahan (git commit -m 'Add some AmazingFeature')
+
+Push ke branch (git push origin feature/AmazingFeature)
+
+Buat Pull Request
+
+📄 Lisensi
+Distributed under the MIT License. Lihat LICENSE untuk lebih detail.
+
+👥 Kontak
+Nama Anda - @twitter_anda - email@example.com
+
+Link Project: https://github.com/username/finance-tracker
+
+🙌 Penghargaan
+React
+
+Recharts
+
+Lucide
+
+⭐️ Jika project ini membantu Anda, jangan lupa beri bintang di GitHub!
+
+text
+
+Simpan konten di atas dalam file dengan nama `README.md` di root folder project Anda. File README.md ini memberikan informasi lengkap tentang project finance tracker Anda, termasuk fitur, cara instalasi, cara penggunaan, dan informasi lainnya yang berguna untuk orang yang ingin memahami atau berkontribusi pada project Anda.
